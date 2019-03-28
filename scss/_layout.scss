@@ -1,0 +1,221 @@
+* {box-sizing: border-box; margin: 0; padding: 0}
+
+body {
+    position: relative;
+    font-family: 'Rubik', sans-serif;
+    background: $background;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 45vw 10px 25vw;
+    grid-template-rows: 70px 80px 200px 250px 400px 900px 400px;
+    transition: background-color 60s ease-in;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: $primary;
+    }
+}
+body:hover {
+    background-color: pink;
+}
+
+#spotify-follow{
+    position: absolute;
+    grid-column-start: 3;
+    grid-row-end: 1;
+    margin-top: 20px;
+    animation: 2s slideDown ease-out;
+}
+
+#squares-homepage-intro {
+    position: relative;
+    grid-column: 1;
+    grid-row-start: 3;
+    margin: 50px 0 0 270px;
+
+    .standby-square {
+        display: inline-block;
+        margin-right: 30px;
+        width: 20px;
+        height: 20px;
+        background: $primary;
+        animation: rotate 3s linear infinite;
+    }
+
+}
+
+#hallo-header{
+    position: relative;
+    color: $primary;
+    margin: 0;
+    grid-column-end: 1;
+    grid-row: 2;
+    text-align: right;
+    font-size: 24pt;
+    max-height: 42px;    
+}
+
+#hallo-header::after{
+    position: absolute;
+    content: "";
+    height: 0.14rem;
+    width: 260px;
+    background: $primary;
+    bottom: 0;
+    right: 0;
+}
+
+#menu {
+    position: relative;
+    color: $primary;
+    grid-column-end: 1;
+    grid-row-start: 3;
+    text-align: right;
+    font-size: 18pt;
+
+    li{
+        padding: 20px 30px 20px 0;
+    }
+
+    li:hover{
+        background: $primary;
+        color: $background;
+    }
+}
+
+#menu::after{
+    position: absolute;
+    content: "";
+    height: 140%;
+    width: 0.16rem;
+    background: $primary;
+    top: -10px;
+}
+
+#content-container{
+    grid-column-end: 2;
+    grid-row-start: 3;   
+
+    h1 {
+        font-size: 45pt;
+        text-align: right;
+    }
+
+    p {
+        padding: 100px 10px;
+        font-size: 22pt;
+        text-align: right;
+    }
+
+    h2 {
+        font-size: 40pt;
+    }
+
+    a  {
+        letter-spacing: 3px;
+    }
+}
+
+#portfolio {
+    display: none;
+    margin-top: 20px;
+    transition: background-image .2s ease-in-out;
+    padding: 30px 0 30px 0;
+
+    li {
+        width: 100%;
+        height: 80px;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px;
+        transition: background-color .2s ease-out;
+
+        &:hover{
+            background-color: $primary;
+            a {
+                color: white;
+            }
+        }
+
+        a{
+            color: $primary;
+            font-size: 18pt;
+            transition: color .2s ease-out;
+        }
+
+        &:nth-child(even){
+            border-top: $primary 2px solid;
+            border-bottom: $primary 2px solid;
+        }
+    }
+}
+
+#team-gallery{
+    display: none;
+    height: 640px;
+    width: 95vw;
+    padding: 80px 0;
+    transform: translateX(-25vw);
+    margin-bottom: 100px;
+    img {
+        width: 15vw;
+        transition: opacity .6s linear;
+    }
+
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    grid-column-end: 1;
+    grid-row-end: 5;
+    color: $primary;
+    padding-right: 30px;
+
+    li {
+        margin: 5px 0;
+    }
+}
+
+#social-media{
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+
+    li {
+        margin-left: 30px;
+    }
+        svg {
+            fill: $primary;
+        }
+
+}
+
+footer {
+    grid-row: 7;
+    grid-column: 1/4;
+    display: flex;
+   
+    border-top: 2px $primary solid;
+    font-size: 16pt;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            margin-left: 20px;
+        }
+    }
+}
